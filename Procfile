@@ -1,1 +1,1 @@
-web: python Data/server.py
+web: python Data/runserver.py
