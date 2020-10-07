@@ -3,7 +3,7 @@ PyAutoGUI==0.9.50
 opencv_python==4.3.0.36
 selenium==3.141.0
 matplotlib==3.0.2
-numpy==1.16.0+mkl
-scipy==1.2.0
 gevent_socketio==0.3.6
 scikit_learn==0.23.2
+scipy==1.2.0
+numpy==1.16.0+mkl
