@@ -40,8 +40,5 @@ async def load_data(sid, json):
 app.router.add_get("/", index)
 
 if __name__ == "__main__":
-    mu = np.load("mu.npy")
-    sigma = np.load("sigma.npy")
-    p = np.load("p.npy")
     web.run_app(app)
     print(theta)
