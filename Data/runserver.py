@@ -40,5 +40,6 @@ async def load_data(sid, json):
 app.router.add_get("/", index)
 
 if __name__ == "__main__":
-    web.run_app(app)
+    #web.run_app(app)
+    web.run_app(app, port=os.getenv('PORT', 5000))
     print(theta)
