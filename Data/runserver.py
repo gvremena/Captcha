@@ -12,8 +12,10 @@ app = web.Application()
 sio.attach(app)
 
 async def index(request):
+    prt = os.getenv('PORT', 32123)
     with open("captcha.html") as f:
-        return web.Response(text=f.read(), content_type="text/html")
+        page = f.read().replace("29968", str(prt))
+        return web.Response(text=page, content_type="text/html")
 
 @sio.on("message")
 async def print_message(sid, message):
@@ -38,8 +40,5 @@ app.router.add_get("/", index)
 if __name__ == "__main__":
     #web.run_app(app)
     prt = os.getenv('PORT', 32123)
-    f = open("port.txt", "w")
-    f.write(str(prt))
-    f.close()
     web.run_app(app, port=prt)
     print(theta)
