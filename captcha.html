@@ -33,7 +33,7 @@ var correctcolor = '';
 
 var percent = 0.1;
 
-var port = process.env.PORT || 8080;
+var port = 5000;
 	
 const socket = io("ws://localhost:" + port, {transports: ['websocket', 'polling', 'flashsocket']});
 
