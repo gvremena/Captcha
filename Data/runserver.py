@@ -44,5 +44,5 @@ app.router.add_get("/", index)
 if __name__ == "__main__":
     #web.run_app(app)
     web.run_app(app, port=prt)
-    print("Starting at " + port)
+    print("Starting at " + prt)
     sys.stdout.flush()
