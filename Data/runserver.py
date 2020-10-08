@@ -27,6 +27,7 @@ async def print_message(sid, message):
 @sio.on("load_data")
 async def load_data(sid, json):
     print("Adding new json!")
+    sys.stdout.flush()
     with open("captcha.html") as f:
         page = f.read().replace("<p>PTEXT</p>", "<p>asdfasdfasdf</p>")
     
@@ -45,3 +46,5 @@ app.router.add_get("/", index)
 if __name__ == "__main__":
     #web.run_app(app)
     web.run_app(app, port=prt)
+    print("PRINT TEST")
+    sys.stdout.flush()
