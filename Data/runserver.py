@@ -4,6 +4,7 @@ import data_loader
 import logistic_regression
 import socketio
 import numpy as np
+import sys
 
 theta = np.load("theta.npy")
 prt = os.getenv('PORT', 32123)
