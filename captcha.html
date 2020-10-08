@@ -35,7 +35,6 @@ var percent = 0.1;
 
 var port = 29968;
 
-io.disable('browser client cache');
 const socket = io("wss://captchap.herokuapp.com:" + port, {transports: ['websocket', 'polling', 'flashsocket']});
 
 window.addEventListener('mouseup', (e) => {
