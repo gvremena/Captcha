@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="jquery-3.5.1.js"></script>
+<script src="Data/jquery-3.5.1.js"></script>
 
-<script src="jquery-ui.js"></script>
-<link rel="stylesheet" href="jquery-ui.css">
+<script src="Data/jquery-ui.js"></script>
+<link rel="stylesheet" href="Data/jquery-ui.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
 </head>
@@ -33,7 +33,9 @@ var correctcolor = '';
 
 var percent = 0.1;
 
-const socket = io("ws://localhost:8080", {transports: ['websocket', 'polling', 'flashsocket']});
+var port = process.env.PORT || 8080;
+	
+const socket = io("ws://localhost:" + port, {transports: ['websocket', 'polling', 'flashsocket']});
 
 window.addEventListener('mouseup', (e) => {
 	color = e.target.getAttribute('color');
