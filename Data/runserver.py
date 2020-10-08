@@ -37,5 +37,9 @@ app.router.add_get("/", index)
 
 if __name__ == "__main__":
     #web.run_app(app)
-    web.run_app(app, port=os.getenv('PORT', 32123))
+    prt = os.getenv('PORT', 32123)
+    f = open("port.txt", "w")
+    f.write(str(prt))
+    f.close()
+    web.run_app(app, port=prt)
     print(theta)
