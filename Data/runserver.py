@@ -26,6 +26,9 @@ async def print_message(sid, message):
 @sio.on("load_data")
 async def load_data(sid, json):
     print("Adding new json!")
+    with open("captcha.html") as f:
+        page = f.read().replace("<p>PTEXT</p>", "<p>asdfasdfasdf</p>")
+    
     if not os.path.exists(data_loader.data_path):
         np.save("data.npy", np.empty((0, 6)))
 
