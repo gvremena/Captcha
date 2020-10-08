@@ -49,3 +49,5 @@ if __name__ == "__main__":
     sys.stderr.write("PRINT TEST\n")
     sys.stderr.flush()
     web.run_app(app, port=prt)
+    sys.stderr.write("DONE\n")
+    sys.stderr.flush()
