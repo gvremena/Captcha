@@ -5,7 +5,8 @@ import logistic_regression
 import socketio
 import numpy as np
 
-theta = np.load("theta.npy");
+theta = np.load("theta.npy")
+prt = os.getenv('PORT', 32123)
 
 sio = socketio.AsyncServer(cors_allowed_origins="*")
 app = web.Application()
@@ -39,6 +40,5 @@ app.router.add_get("/", index)
 
 if __name__ == "__main__":
     #web.run_app(app)
-    prt = os.getenv('PORT', 32123)
     web.run_app(app, port=prt)
     print(theta)
