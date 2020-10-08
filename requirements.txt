@@ -7,4 +7,3 @@ python-socketio
 scikit_learn==0.23.2
 scipy==1.2.0
 numpy==1.16.0
-os-sys
