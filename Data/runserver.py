@@ -16,7 +16,7 @@ app = web.Application()
 sio.attach(app)
 
 async def index(request):
-    with open("Data/captcha.html") as f:
+    with open("captcha.html") as f:
         return web.Response(text=f.read(), content_type="text/html")
 
 @sio.on("message")
