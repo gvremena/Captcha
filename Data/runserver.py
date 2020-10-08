@@ -26,6 +26,7 @@ async def print_message(sid, message):
 @sio.on("load_data")
 async def load_data(sid, json):
     print("Adding new json!")
+    sys.stdout.flush()
     if not os.path.exists(data_loader.data_path):
         np.save("data.npy", np.empty((0, 6)))
 
@@ -33,7 +34,9 @@ async def load_data(sid, json):
 
     result = logistic_regression.predict_p(data, theta) #data_loader.predict(data, mu, sigma, p)
     print(data)
+    sys.stdout.flush()
     print("result: ", result)
+    sys.stdout.flush()
     await sio.emit("message", str(result[0]))
 
 app.router.add_get("/", index)
@@ -41,4 +44,5 @@ app.router.add_get("/", index)
 if __name__ == "__main__":
     #web.run_app(app)
     web.run_app(app, port=prt)
-    print(theta)
+    print("Starting at " + port)
+    sys.stdout.flush()
