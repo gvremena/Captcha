@@ -35,7 +35,7 @@ var percent = 0.1;
 
 var port = 29968;
 	
-const socket = io("wss://captchap.herokuapp.com:" + port, {transports: ['websocket', 'polling', 'flashsocket']});
+const socket = io("ws://captchap.herokuapp.com:" + port, {transports: ['websocket', 'polling', 'flashsocket']});
 
 window.addEventListener('mouseup', (e) => {
 	color = e.target.getAttribute('color');
