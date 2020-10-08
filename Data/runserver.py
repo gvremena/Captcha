@@ -18,6 +18,8 @@ async def index(request):
     with open("captcha.html") as f:
         page = f.read().replace("29968", str(prt))
         return web.Response(text=page, content_type="text/html")
+    sys.stderr.write("INDEX OPENING\n")
+    sys.stderr.flush()
 
 @sio.on("message")
 async def print_message(sid, message):
@@ -26,10 +28,9 @@ async def print_message(sid, message):
 
 @sio.on("load_data")
 async def load_data(sid, json):
-    print("Adding new json!")
-    sys.stdout.flush()
-    with open("captcha.html") as f:
-        page = f.read().replace("<p>PTEXT</p>", "<p>asdfasdfasdf</p>")
+    #print("Adding new json!")
+    sys.stderr.write("SERVER RECEIVING\n")
+    sys.stderr.flush()
     
     if not os.path.exists(data_loader.data_path):
         np.save("data.npy", np.empty((0, 6)))
@@ -45,8 +46,6 @@ app.router.add_get("/", index)
 
 if __name__ == "__main__":
     #web.run_app(app)
-    sys.stderr.write("PRINT TEST 2")
-    print("PRINT TEST")
-    sys.stdout.flush()
+    sys.stderr.write("PRINT TEST\n")
     sys.stderr.flush()
     web.run_app(app, port=prt)
