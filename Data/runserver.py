@@ -45,6 +45,8 @@ app.router.add_get("/", index)
 
 if __name__ == "__main__":
     #web.run_app(app)
-    web.run_app(app, port=prt)
+    sys.stderr.write("PRINT TEST 2")
     print("PRINT TEST")
     sys.stdout.flush()
+    sys.stderr.flush()
+    web.run_app(app, port=prt)
