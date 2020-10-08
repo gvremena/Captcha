@@ -230,7 +230,7 @@ jQuery(function() {
 });
 
 function send_data(json){
-	console.log('Sending to server:');
+	console.log('Sending to server at ' + port + ':');
 	console.log(json);
 	socket.emit('load_data', json);
 }
