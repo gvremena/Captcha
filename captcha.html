@@ -239,8 +239,8 @@ function send_data(json){
 socket.on('message', function(message) {
 	console.log('Receiving ' + message);
 	percent = parseFloat(message);
-	document.getElementById('p_human').innerHTML = percent.toFixed(2);
-	document.getElementById('p_bot').innerHTML = (1 - percent).toFixed(2);
+	document.getElementById('p_human').innerHTML = (percent*100).toFixed(2);
+	document.getElementById('p_bot').innerHTML = ((1 - percent)*100).toFixed(2);
 	jQuery('#dialog').dialog('open');
 	//window.alert('Data sent. You are ' + message);
 	//window.close();
@@ -317,8 +317,6 @@ function download(content, fileName, contentType) {
 // style="background-color:#215A63"
 start();
 </script>
-
-<p>TEXT</p>
 
 <div id="dialog" title="Final Dialog">
 	<h2 style="text-align: center;">Your result</h2>
